@@ -47,12 +47,12 @@ export function getBlocksForDay(zoomLevel: ZoomLevel): { time: Date; label: stri
 
 export function getGridColumns(zoomLevel: ZoomLevel): number {
   switch (zoomLevel) {
-    case 240: return 3; // 6 blocks, 2 rows
-    case 120: return 4; // 12 blocks, 3 rows
-    case 60: return 6;  // 24 blocks, 4 rows
-    case 30: return 8;  // 48 blocks, 6 rows
-    case 15: return 12; // 96 blocks, 8 rows
-    case 5: return 12;  // 288 blocks, 24 rows
+    case 240: return 3;  // 6 blocks, 2 rows
+    case 120: return 4;  // 12 blocks, 3 rows
+    case 60: return 6;   // 24 blocks, 4 rows
+    case 30: return 6;   // 48 blocks, 8 rows
+    case 15: return 4;   // 96 blocks, 24 rows
+    case 5: return 4;    // 288 blocks, 72 rows (scrollable)
     default: return 6;
   }
 }
@@ -63,8 +63,8 @@ export function getBlockHeight(zoomLevel: ZoomLevel): number {
     case 120: return 150;
     case 60: return 120;
     case 30: return 100;
-    case 15: return 80;
-    case 5: return 60;
+    case 15: return 90;
+    case 5: return 80;
     default: return 100;
   }
 }
